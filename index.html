@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="body-container">
+
+        <div class="image-container">
+            <div class="logo">BLOSSOM</div>
+            <div class="image-credit"><p>Photo by <a href="https://unsplash.com/photos/pink-flower-in-tilt-shift-lens-fJ8UsXfaccA">Alfred</a> on <a href="https://unsplash.com/">Unsplash</a>.</p></div>
+        </div>
+
+        <div class="content-container">
+
+            <div class="dummy-text">
+                <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.</p>
+
+                <p>Sign up <span>now</span> to get started.</p>
+
+                <p>You <span>know</span> you want to.</p>
+            </div>
+
+            <div class="form-outer-container">
+                <div class="form-heading">Let's do this!</div>
+
+                <form action="#" method="get">
+
+                    <div class="form-row name-section">
+                        <div class="form-box first-name">
+                            <label for="first_name">FIRST NAME *</label>
+                            <input type="text" name="first_name" id="first_name" required>
+                        </div>
+                        <div class="form-box last-name">
+                            <label for="last_name">LAST NAME</label>
+                            <input type="text" name="last_name" id="last_name">
+                        </div>
+                    </div>
+
+                    <div class="form-row contact-section">
+                        <div class="form-box email">
+                            <label for="mail">EMAIL *</label>
+                            <input type="email" name="user_mail" id="mail" placeholder="johndoe@gmail.com" required>
+                        </div>
+                        <div class="form-box phone-number">
+                            <label for="number">PHONE NUMBER</label>
+                            <input type="text" name="user_number" id="number">
+                        </div>
+                    </div>
+
+                    <div class="form-row password-section">
+                        <div class="form-box password">
+                            <label for="pwd">PASSWORD *</label>
+                            <input type="password" name="user_password" id="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Example123" required>
+                            <div>must contain uppercase, lowercase, number and atleast 8 character.</div>
+                        </div>
+                        <div class="form-box confirm-password">
+                            <label for="confirm_pwd">CONFIRM PASSWORD *</label>
+                            <input type="password" id="confirm_pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Example123" required>
+                            <div class="confirmation"></div>
+                        </div>
+                    </div>
+
+                    <div class="button-container">
+                        <button type="submit">Create Account</button>
+                    </div>
+                </form>
+                <div class="login-container">
+                    Already have an account? <span>Log in</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

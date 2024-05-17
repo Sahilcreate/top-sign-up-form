@@ -1,0 +1,287 @@
+/*Josh's Reset*/
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+    font: inherit;
+}
+/*
+    7. Avoid text overflows
+*/
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+*/
+#root, #__next {
+    isolation: isolate;
+}
+
+
+/*
+    My code
+*/
+:root {
+    --white: #ffffff;
+    --black: rgb(0 0 0);
+    --blossomPink: rgb(231 126 231);
+    --lightPink: rgb(251 233 251);
+}
+
+@font-face {
+    font-family: 'blossom';
+    src: url(fonts/lime_blossom_caps-webfont.woff2) format('woff2'),
+    url(fonts/lime_blossom_caps-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: var(--black);
+}
+
+.body-container {
+    width: 1200px;
+    height: 100vh;
+    display: flex;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    background-image: url(blossom.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 40%;
+
+}
+
+.logo,
+.image-credit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(251 233 251/ 0.1);
+    
+}
+
+.logo {
+    margin-top: 15vh;
+    font-size: clamp(30px, 3.5vw, 45px);
+
+    padding: 2vh 0;
+    font-family: "blossom", sans-serif;
+    color: var(--blossomPink);
+}
+
+.image-credit {
+    margin-bottom: 6px;
+    font-size: 0.8rem;
+}
+
+.image-container,
+a {
+    color: var(--white);
+}
+
+a:hover {
+    font-weight: 800;
+}
+
+a:visited {
+    color: var(--blossomPink);
+}
+
+
+/*
+    right side of viewport
+*/
+.content-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: var(--white);
+}
+
+.dummy-text {
+    height: 35vh;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: var(--lightPink);
+    box-shadow: inset 0px -0.3px 5px;
+}
+
+p {
+    padding: 0 4vw;
+}
+
+.dummy-text>p:first-child {
+    margin-top: 8vh;
+}
+
+.dummy-text>p:last-child {
+    margin-top: 2vh;
+}
+
+.dummy-text span {
+    font-style: italic;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.form-outer-container,
+.form-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-outer-container {
+    padding: 0 4vw;
+
+}
+
+.form-heading {
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.form-row {
+    display: flex;
+    gap: 4vw;
+    margin-bottom: 2vh;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--blossomPink);
+}
+
+input {
+    appearance: none;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+
+/*getting rid of background color left behind
+when selecting browser's autofill option*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+/*!important added to validate even after
+:-webkit-autofill pseudo-class added*/
+input:hover,
+input:focus {
+    background-color: var(--lightPink) !important;
+    border: 1px solid var(--black);
+    box-shadow: 0.3px 0.3px 1px var(--black) !important;
+}
+
+input:placeholder-shown {
+    color: gray;
+}
+
+#mail:not(:placeholder-shown):invalid {
+    border: 2px solid red;
+}
+
+.password-section input:not(:placeholder-shown):invalid {
+    border: 2px solid red;
+}
+
+.password-section {
+    padding-bottom: 2vh;
+}
+
+.password div {
+    width: 200px;
+    color: gray;
+    font-size: 14px;
+}
+
+button {
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: var(--blossomPink);
+    color: var(--white);
+    border: 1px solid var(--blossomPink);
+    border-radius: 8px;
+    padding: 8px 40px;
+    margin-bottom: 1vh;
+}
+
+button:hover {
+    border: 1px solid var(--black);
+    color: var(--black);
+    cursor: pointer;
+}
+
+button:active {
+    color: var(--white);
+    background-color: var(--blossomPink);
+    border: 1px solid var(--blossomPink);
+}
+
+.login-container {
+    font-size: 18px;
+}
+
+.login-container span{
+    color: var(--blossomPink);
+    font-weight: 600;
+}
+
+.login-container span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*content given by js*/
+.confirmation {
+    font-size: 14px;
+}
